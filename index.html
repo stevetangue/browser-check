@@ -40,14 +40,14 @@ let chromeCheck =
 // Edge (based on chromium) detection
 let edgeChromiumCheck = chromeCheck && navigator.userAgent.indexOf("Edg") != -1;
 
-let output = `Detecting browsers: \n\n
-is Firefox: ${firefoxCheck} \n\n
-is Chrome: ${chromeCheck}  \n\n
-is Safari: ${safariCheck}  \n\n
-is Opera: ${operaCheck}  \n\n
-is IE: ${ieCheck} \n\n
-is Edge: ${edgeCheck}  \n\n
-is EdgeChromium: ${edgeChromiumCheck} \n\n`;
+let output = `Detecting browsers:`<br/>
+`is Firefox: ${firefoxCheck}`<br/>
+`is Chrome: ${chromeCheck}`<br/>
+`is Safari: ${safariCheck}`<br/>
+`is Opera: ${operaCheck}`<br/>
+`is IE: ${ieCheck}`<br/>
+`is Edge: ${edgeCheck}`<br/>
+`is EdgeChromium: ${edgeChromiumCheck}`<br/>;
 
 document.getElementById("app").innerHTML = `
 <h1>BrowserCheck</h1>
