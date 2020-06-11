@@ -9,16 +9,16 @@
 
 <script>
 // Opera 8.0+
-const operaCheck =
+var operaCheck =
   (!!window.opr && !!opr.addons) ||
   !!window.opera ||
   navigator.userAgent.indexOf(" OPR/") >= 0;
 
 // Firefox 1.0+
-const firefoxCheck = typeof InstallTrigger !== "undefined";
+var firefoxCheck = typeof InstallTrigger !== "undefined";
 
 // Safari 3.0+ "[object HTMLElementConstructor]"
-const safariCheck =
+var safariCheck =
   /constructor/i.test(window.HTMLElement) ||
   (function(p) {
     return p.toString() === "[object SafariRemoteNotification]";
@@ -28,17 +28,17 @@ const safariCheck =
   );
 
 // Internet Explorer 6-11
-const ieCheck = /*@cc_on!@*/ false || !!document.documentMode;
+var ieCheck = /*@cc_on!@*/ false || !!document.documentMode;
 
 // Edge 20+
-const edgeCheck = !ieCheck && !!window.StyleMedia;
+var edgeCheck = !ieCheck && !!window.StyleMedia;
 
 // Chrome 1 - 79
-const chromeCheck =
+var chromeCheck =
   !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
 // Edge (based on chromium) detection
-const edgeChromiumCheck = chromeCheck && navigator.userAgent.indexOf("Edg") != -1;
+var edgeChromiumCheck = chromeCheck && navigator.userAgent.indexOf("Edg") != -1;
 
 // unsupported string literal es6 IE11
 // const output = `<br/>Detecting browsers: <br/><br/>
@@ -51,7 +51,7 @@ const edgeChromiumCheck = chromeCheck && navigator.userAgent.indexOf("Edg") != -
 // is EdgeChromium: ${edgeChromiumCheck} <br/>`;
   
 // for IE11 
-let output = "Detecting browsers: <br/>";
+var output = "Detecting browsers: <br/>";
 output += "is Firefox:" + firefoxCheck + "<br/>";
 output += "is Chrome:" + chromeCheck + "<br/>";
 output += "is Safari:" + safariCheck + "<br/>";
@@ -60,7 +60,7 @@ output += "is IE:" + ieCheck + "<br/>";
 output += "is Edge:" + edgeCheck +"<br/>";
 output += "is EdgeChromium:" + edgeChromiumCheck + "<br/>";
 
-let output = "Detecting browsers: <br/>";
+var output = "Detecting browsers: <br/>";
 output += "is Firefox:" + firefoxCheck + "<br/>";
 output += "is Chrome:" + chromeCheck + "<br/>";
 output += "is Safari:" + safariCheck + "<br/>";
@@ -69,7 +69,7 @@ output += "is IE:" + ieCheck + "<br/>";
 output += "is Edge:" + edgeCheck + "<br/>";
 output += "is EdgeChromium:" + edgeChromiumCheck + "<br/>";
 
-let html = "<h1>BrowserCheck</h1>";
+var html = "<h1>BrowserCheck</h1>";
 html += "<div>" + window.navigator.userAgent + "</div>";
 html += "<hr /><br />";
 html += "<div>" + output + "</div>";
