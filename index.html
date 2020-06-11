@@ -40,14 +40,25 @@ const chromeCheck =
 // Edge (based on chromium) detection
 const edgeChromiumCheck = chromeCheck && navigator.userAgent.indexOf("Edg") != -1;
 
-const output = `Detecting browsers:<br/>
-is Firefox: ${firefoxCheck}<br/>
-is Chrome: ${chromeCheck}<br/>
-is Safari: ${safariCheck}<br/>
-is Opera: ${operaCheck}<br/>
-is IE: ${ieCheck}<br/>
-is Edge: ${edgeCheck}<br/>
-is EdgeChromium: ${edgeChromiumCheck}<br/>`;
+// unsupported string literal es6 IE11
+// const output = `<br/>Detecting browsers: <br/><br/>
+// is Firefox: ${firefoxCheck} <br/>
+// is Chrome: ${chromeCheck} <br/>
+// is Safari: ${safariCheck} <br/>
+// is Opera: ${operaCheck} <br/>
+// is IE: ${ieCheck} <br/>
+// is Edge: ${edgeCheck} <br/>
+// is EdgeChromium: ${edgeChromiumCheck} <br/>`;
+  
+// for IE11 
+let output = "Detecting browsers: <br/>";
+output += "is Firefox:" + firefoxCheck + "<br/>";
+output += "is Chrome:" + chromeCheck + "<br/>";
+output += "is Safari:" + safariCheck + "<br/>";
+output += "is Opera:" + operaCheck  +"<br/>";
+output += "is IE:" + ieCheck + "<br/>";
+output += "is Edge:" + edgeCheck +"<br/>";
+output += "is EdgeChromium:" + edgeChromiumCheck + "<br/>";
 
 document.getElementById("app").innerHTML = `
 <h1>BrowserCheck</h1>
