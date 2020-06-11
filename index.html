@@ -31,14 +31,14 @@ let safariCheck =
 let ieCheck = /*@cc_on!@*/ false || !!document.documentMode;
 
 // Edge 20+
-let edgeCheck = !isIE && !!window.StyleMedia;
+let edgeCheck = !ieCheck && !!window.StyleMedia;
 
 // Chrome 1 - 79
 let chromeCheck =
   !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
 // Edge (based on chromium) detection
-let edgeChromiumCheck = isChrome && navigator.userAgent.indexOf("Edg") != -1;
+let edgeChromiumCheck = chromeCheck && navigator.userAgent.indexOf("Edg") != -1;
 
 let output = `Detecting browsers: \n\n
 is Firefox: ${firefoxCheck} \n\n
