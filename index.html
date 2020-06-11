@@ -60,18 +60,22 @@ output += "is IE:" + ieCheck + "<br/>";
 output += "is Edge:" + edgeCheck +"<br/>";
 output += "is EdgeChromium:" + edgeChromiumCheck + "<br/>";
 
-document.getElementById("app").innerHTML = `
-<h1>BrowserCheck</h1>
+let output = "Detecting browsers: <br/>";
+output += "is Firefox:" + firefoxCheck + "<br/>";
+output += "is Chrome:" + chromeCheck + "<br/>";
+output += "is Safari:" + safariCheck + "<br/>";
+output += "is Opera:" + operaCheck + "<br/>";
+output += "is IE:" + ieCheck + "<br/>";
+output += "is Edge:" + edgeCheck + "<br/>";
+output += "is EdgeChromium:" + edgeChromiumCheck + "<br/>";
 
-<div>
-  ${window.navigator.userAgent}
-</div>
-<hr />
-<br />
-<div>
-${output}
-</div>
-`;
+let html = "<h1>BrowserCheck</h1>";
+html += "<div>" + window.navigator.userAgent + "</div>";
+html += "<hr /><br />";
+html += "<div>" + output + "</div>";
+
+document.getElementById("app").innerHTML = html;
+
 </script>
 </body>
 </html>
