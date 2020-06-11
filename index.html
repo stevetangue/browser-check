@@ -9,16 +9,16 @@
 
 <script>
 // Opera 8.0+
-let opera =
+let operaCheck =
   (!!window.opr && !!opr.addons) ||
   !!window.opera ||
   navigator.userAgent.indexOf(" OPR/") >= 0;
 
 // Firefox 1.0+
-let firefox = typeof InstallTrigger !== "undefined";
+let firefoxCheck = typeof InstallTrigger !== "undefined";
 
 // Safari 3.0+ "[object HTMLElementConstructor]"
-let safari =
+let safariCheck =
   /constructor/i.test(window.HTMLElement) ||
   (function(p) {
     return p.toString() === "[object SafariRemoteNotification]";
@@ -28,26 +28,26 @@ let safari =
   );
 
 // Internet Explorer 6-11
-let ie = /*@cc_on!@*/ false || !!document.documentMode;
+let ieCheck = /*@cc_on!@*/ false || !!document.documentMode;
 
 // Edge 20+
-let edge = !isIE && !!window.StyleMedia;
+let edgeCheck = !isIE && !!window.StyleMedia;
 
 // Chrome 1 - 79
-let chrome =
+let chromeCheck =
   !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
 // Edge (based on chromium) detection
-let edgeChromium = isChrome && navigator.userAgent.indexOf("Edg") != -1;
+let edgeChromiumCheck = isChrome && navigator.userAgent.indexOf("Edg") != -1;
 
 let output = `Detecting browsers: \n\n
-is Firefox: ${firefox} \n\n
-is Chrome: ${chrome}  \n\n
-is Safari: ${safari}  \n\n
-is Opera: ${opera}  \n\n
-is IE: ${ie} \n\n
-is Edge: ${edge}  \n\n
-is EdgeChromium: ${edgeChromium} \n\n`;
+is Firefox: ${firefoxCheck} \n\n
+is Chrome: ${chromeCheck}  \n\n
+is Safari: ${safariCheck}  \n\n
+is Opera: ${operaCheck}  \n\n
+is IE: ${ieCheck} \n\n
+is Edge: ${edgeCheck}  \n\n
+is EdgeChromium: ${edgeChromiumCheck} \n\n`;
 
 document.getElementById("app").innerHTML = `
 <h1>BrowserCheck</h1>
